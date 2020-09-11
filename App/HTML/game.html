@@ -7,9 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>Dam Simulator - Game</title>
   </head>
-  <body onload="game()">
+  <body onload="load()">
     <a href="home.html"><h2>Back!</h2></a>
-    <img class="dam" id="dam">
+    <img id="dam" height="400px" width="1000px">
+    <p>Dam Points:</p><p id="points"></p>
+    <button onclick="point()">Use Dam</button>
     <script src="../JS/game.js"></script>
   </body>
 </html>
