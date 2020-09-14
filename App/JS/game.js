@@ -33,7 +33,7 @@ function buy() {
   if (points == cost || points > cost) {
     dam = dam + 1;
     points = points - cost;
-    cost = dam * dam * dam * dam;
+    cost = dam * dam * dam;
     setCookie("dam", dam, 365);
     setCookie("cost", cost, 365);
     setCookie("points", points, 365);
