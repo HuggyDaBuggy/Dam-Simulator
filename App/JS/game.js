@@ -28,14 +28,14 @@ function buy() {
   if (points == cost || points > cost) {
     dam = dam + 1;
     points = points - cost;
-    cost = dam * dam;
+    cost = dam * dam * dam * dam;
     document.getElementById("points").innerHTML = "Dam Points: " + points;
     document.getElementById("dam-text").innerHTML = "Level " + dam + " Dam"; 
     document.getElementById("dam-break").innerHTML = "1/" + (dam * 10) + " chance to break";
     document.getElementById("buy-dam").innerText = "Upgrade Dam(" + cost + " Dam points)";
     document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png")
   } else {
-    alert("Your too poor lmao")
+    alert("You are too poor lmao")
   }
 }
 
