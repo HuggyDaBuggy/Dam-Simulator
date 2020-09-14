@@ -1,7 +1,11 @@
-var points = 0;
-var dam = 1;
-var random = 0;
-var cost = 1;
+if (points == "") {
+  setCookie("points", 0, 365)
+  setCookie("dam", 1, 365)
+  setCookie("cost", 1, 365)
+}
+var points = Number(getCookie("points"))
+var dam = Number(getCookie("dam"))
+var cost = Number(getCookie("dam"))
 
 function point() {
   document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png")
@@ -12,6 +16,7 @@ function point() {
   }
   if (random != 1) {
     points = points + (dam / 2);
+    setCookie("points", points, 365);
     document.getElementById("points").innerHTML = "Dam Points: " + points;
   }
 }
@@ -29,8 +34,11 @@ function buy() {
     dam = dam + 1;
     points = points - cost;
     cost = dam * dam * dam * dam;
+    setCookie("dam", dam, 365);
+    setCookie("cost", cost, 365);
+    setCookie("points", points, 365);
     document.getElementById("points").innerHTML = "Dam Points: " + points;
-    document.getElementById("dam-text").innerHTML = "Level " + dam + " Dam"; 
+    document.getElementById("dam-text").innerHTML = "Level " + dam + " Dam";
     document.getElementById("dam-break").innerHTML = "1/" + (dam * 10) + " chance to break";
     document.getElementById("buy-dam").innerText = "Upgrade Dam(" + cost + " Dam points)";
     document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png")
@@ -40,9 +48,8 @@ function buy() {
 }
 
 function death() {
-  points = 0;
-  dam = 1;
-  random = 0;
-  cost = 5;
+  setCookie("points", 0, 365)
+  setCookie("dam", 1, 365)
+  setCookie("cost", 1, 365)
   window.location.replace("home.html")
 }
