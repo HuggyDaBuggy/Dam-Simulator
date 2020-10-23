@@ -8,7 +8,9 @@ var dam = Number(getCookie("dam"));
 var cost = Number(getCookie("dam"));
 
 function point() {
-  document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png");
+  document
+    .getElementById("dam")
+    .setAttribute("src", "../Images/Dams/dam" + dam + ".png");
   var random = Math.floor(Math.random() * (dam * 10)) + 1;
   if (random == 1) {
     alert("Your dam broke lmao");
@@ -22,11 +24,15 @@ function point() {
 }
 
 function load() {
-  document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png");
-  document.getElementById("dam-break").innerHTML = "1/" + dam * 10 + " chance to break";
+  document
+    .getElementById("dam")
+    .setAttribute("src", "../Images/Dams/dam" + dam + ".png");
+  document.getElementById("dam-break").innerHTML =
+    "1/" + dam * 10 + " chance to break";
   document.getElementById("points").innerHTML = "Dam Points: " + points;
   document.getElementById("dam-text").innerHTML = "Level " + dam + " Dam";
-  document.getElementById("buy-dam").innerText = "Upgrade Dam(" + cost + " Dam points)";
+  document.getElementById("buy-dam").innerText =
+    "Upgrade Dam(" + cost + " Dam points)";
 }
 
 function buy() {
@@ -39,9 +45,13 @@ function buy() {
     setCookie("points", points, 365);
     document.getElementById("points").innerHTML = "Dam Points: " + points;
     document.getElementById("dam-text").innerHTML = "Level " + dam + " Dam";
-    document.getElementById("dam-break").innerHTML = "1/" + dam * 10 + " chance to break";
-    document.getElementById("buy-dam").innerText = "Upgrade Dam(" + cost + " Dam points)";
-    document.getElementById("dam").setAttribute("src", "../Images/Dams/dam" + dam + ".png");
+    document.getElementById("dam-break").innerHTML =
+      "1/" + dam * 10 + " chance to break";
+    document.getElementById("buy-dam").innerText =
+      "Upgrade Dam(" + cost + " Dam points)";
+    document
+      .getElementById("dam")
+      .setAttribute("src", "../Images/Dams/dam" + dam + ".png");
   } else {
     alert("You are too poor lmao");
   }
